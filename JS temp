@@ -1,0 +1,16 @@
+function convertTemperature() {
+    const inputField = document.getElementById("input");
+    const unitField = document.getElementById("unit");
+    const resultField = document.getElementById("output");
+
+    const input = parseFloat(inputField.value);
+    const unit = unitField.value;
+
+    if (unit === "celsius") {
+        const fahrenheit = (input * 9/5) + 32;
+        resultField.textContent = `${input}°C is equal to ${fahrenheit.toFixed(2)}°F`;
+    } else if (unit === "fahrenheit") {
+        const celsius = (input - 32) * 5/9;
+        resultField.textContent = `${input}°F is equal to ${celsius.toFixed(2)}°C`;
+    }
+}
